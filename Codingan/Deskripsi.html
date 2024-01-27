@@ -66,7 +66,9 @@
     // Tambahkan setiap item jadwal ekstrakurikuler ke galeri container
     jadwalEkstrakurikuler.forEach((ekstrakurikuler) => {
         const galeriItem = document.createElement("div");
-        galeriItem.classList.add("galeri-item");
+        galeriItem.classList.add("galeri-item"); 
+    // Redirect ke halaman Deskripsi ke Login // 
+        window.location.href = "Loginupdate.html"; //Arahkan pengguna kehalaman berikutnya 
 
         const img = document.createElement("img");
         img.src = ekstrakurikuler.gambar;
