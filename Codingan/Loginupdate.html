@@ -1,55 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="styles.css">  
+    <title>Login SMP</title>
     <style>
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    background-color: cornflowerblue;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(to right, #3498db, #2980b9); /* Gradien warna biru */
+            color: #fff;
+        }
 
-.login-container {
-    text-align: center;
-}
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 400px;
+        }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 300px;
-    margin: 0 auto;
-}
+        .container h2 {
+            margin-bottom: 20px;
+        }
 
-button {
-    cursor: pointer;
-}
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        input {
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #3498db;
+        }
+
+        button {
+            background-color: #3498db; /* Warna biru */
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2980b9; /* Warna biru tua */
+        }
     </style>
 </head>
-<body> 
-    
-    <div class="login-container">
-        <img src="./img/logo.png" width="150" height="130" alt="Deskripsi logo">
-        <h2>Login Jadwal Esktrakulikuler</h2>
+<body>
+    <div class="container">
+        <h2>Login SMP</h2>
         <form id="loginForm">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
 
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required> 
+            <input type="password" id="password" name="password" required>
 
-            <button type="button" onclick="login()">Login</button> 
-
-            <div style="color:blue">Forgotten password?</div>
+            <button type="button" onclick="validateLogin()">Login</button>
         </form>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        function validateLogin() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Contoh sederhana: Cek apakah username dan password tidak kosong
+            if (username === "smpuser" && password === "smppass") {
+                alert("Login berhasil!");
+                // Redirect ke halaman home setelah login
+                window.location.href = "home.html";
+            } else {
+                alert("Username atau password salah!");
+            }
+        }
+    </script>
 </body>
-</html>  
+</html>
